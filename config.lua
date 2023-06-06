@@ -20,7 +20,7 @@
 	 Want to send hackers to the shadow realm for free? Use lint today!
 	 RBLX: @HiRobloxDown | DISCORD: Moonzy#0001
 	 
-	 1.0.0f
+	 1.0.1
 
 ]]
 
@@ -35,8 +35,12 @@ config.anticheatDebug = true  --// Debugging for Developers | RECOMMENDED: False
 --// Checks
 config.flyA = true    --// Should Flight A Check be enabled? | RECOMMENDED: True
 config.flyB = true    --// Should Flight B Check be enabled? | RECOMMENDED: True
-config.flyC = true    --// Should Flight B Check be enabled? | RECOMMENDED: True
-config.flyD = true    --// Should Flight B Check be enabled? | RECOMMENDED: True
+config.flyC = true    --// Should Flight C Check be enabled? | RECOMMENDED: True
+config.flyD = true    --// Should Flight D Check be enabled? | RECOMMENDED: True
+config.flyE = true    --// Should Flight E Check be enabled? | RECOMMENDED: True
+
+config.glideA = true    --// Should Flight D Check be enabled? | RECOMMENDED: True
+config.glideB = true    --// Should Flight E Check be enabled? | RECOMMENDED: True
 
 config.speedA = true  --// Should Speed A Check be enabled? | RECOMMENDED: True
 config.speedB = true  --// Should Speed B Check be enabled? | RECOMMENDED: True
@@ -59,8 +63,14 @@ config.flyBMax = 1.65  --// Maximum allowed time in air before flagging the user
 config.flyCMax = 1.65  --// Maximum allowed time in air before flagging the user as cheating (only detects down).
 config.flyDMax = 1.65  --// Maximum allowed time in air before flagging the user as cheating (only detects up).
 
-config.speedAMax = 27  --// Maximum allowed Velocity Magnitude, detects most speed hacks.
-config.speedBMax = 31  --// Maximum allowed Velocity Magnitude, detects most speed hacks that abuses air-friction.
+config.flyEMaxAir = 0.85  --// Maximum allowed time in air before flagging the user as cheating (detects both up + down + novel).
+config.flyEMaxVelocity = 18.5  --// Maximum allowed LPlrVel² Velocity before flagging the user as cheating (detects both up + down + novel).
+
+config.glideAMax = 0.95  --// Maximum allowed time in air before flagging the user as cheating (novel + down)
+config.glideBMax = 0.95  --// Maximum allowed time in air before flagging the user as cheating (novel + up)
+
+config.speedAMax = 26  --// Maximum allowed Velocity Magnitude, detects most speed hacks.
+config.speedBMax = 29  --// Maximum allowed Velocity Magnitude, detects most speed hacks that abuses air-friction.
 config.speedCMax = 55  --// Maximum allowed acceleration, detects sudden-changes in the player's velocity.
 config.speedDMax = 65  --// Maximum allowed acceleration, detects sudden-changes in the player's velocity.
 
