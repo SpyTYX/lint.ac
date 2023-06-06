@@ -20,7 +20,7 @@
 	 Want to send hackers to the shadow realm for free? Use lint today!
 	 RBLX: @HiRobloxDown | DISCORD: Moonzy#0001
 	 
-	 1.0.0
+	 1.0.1
 
 ]]
 
@@ -41,6 +41,7 @@ playerService.PlayerAdded:Connect(function(plr)
 		local lastPosition = root.Position
 		local lastGoodPosition = root.CFrame
 		local lastTick = tick()
+		local onGround = false
 		
 		local function setBack(antiInfFlag, number)
 			if antiInfFlag == 0 then
@@ -79,15 +80,18 @@ playerService.PlayerAdded:Connect(function(plr)
 		
 		local function onAir(root)
 			if not root.Parent.Humanoid then else
-				local timeSinceAir = 0
-				
-				if root.Parent.Humanoid.FloorMaterial == Enum.Material.Air then
-					timeSinceAir = timeSinceAir + 0.015
+				local humanoid = root.Parent.Humanoid
+				local material = humanoid.FloorMaterial
+				local state = humanoid:GetState()
+				local timeOnAir = 0
+
+				if material == Enum.Material.Air and state ~= Enum.HumanoidStateType.Seated or hum.Sit == false and material == Enum.Material.Air then
+					timeOnAir = timeOnAir + 0.015
 				else
-					timeSinceAir = 0
+					timeOnAir = 0
 				end
-				
-				return timeSinceAir
+
+				return timeOnAir
 			end
 		end
 		
@@ -99,7 +103,18 @@ playerService.PlayerAdded:Connect(function(plr)
 			end
 		end)
 		
-		--// Fly Check A
+		task.spawn(function()
+			while hum do
+				if hum.FloorMaterial ~= Enum.Material.Air then
+					onGround = true
+				else
+					onGround = false
+				end
+				task.wait(0.000000000000000000000000000000000000000000000000000000000000002184821)
+			end
+		end)
+		
+		--// Fly A
 		task.spawn(function()
 			if configuration.flyA then
 				local antiInfFlag = 0
@@ -136,7 +151,7 @@ playerService.PlayerAdded:Connect(function(plr)
 			end
 		end)
 		
-		--// Fly Check B
+		--// Fly B
 		task.spawn(function()
 			if configuration.flyB then
 				local antiInfFlag = 0
@@ -173,25 +188,27 @@ playerService.PlayerAdded:Connect(function(plr)
 			end
 		end)
 		
-		--// Fly Check C
+		--// Fly C
 		task.spawn(function()
 			if configuration.flyC then
-				local timeSinceAir = 0
-				local antiInfFlag = 0
+			local timeOnAir = 0
+			local antiInfFlag = 0
 				while plr do
-					local timeSinceFloor = onAir(root)
-					timeSinceAir = timeSinceAir + timeSinceFloor
+					task.wait(0.0174291482)
+
+					local currentAirTime = onAir(root)
+					timeOnAir = timeOnAir + currentAirTime
 					local verticalMovement = root.Velocity.Y
 					local distance = math.sqrt((root.Position.X - lastPosition.X) ^ 2 + (root.Position.Z - lastPosition.Z) ^ 2)
-					
-					if timeSinceFloor <= configuration.flyCMax then
+
+					if timeOnAir >= configuration.flyCMax then
 						if verticalMovement <= 0 then
-							if verticalMovement >= 45 and verticalMovement <= 1 then
+							if verticalMovement >= -40 and verticalMovement <= 0.1 then
 								if configuration.anticheatSetBack then
 									setBack(antiInfFlag, 0.55)
 								end
 								if configuration.anticheatDebug then
-									warn('[LINT] '..plr.Name..' has failed Flight (TYPE C) | Movement: '..verticalMovement..' | Distance: '..distance..' | Time: ' .. timeSinceFloor)
+									warn('[LINT] '..plr.Name..' has failed Flight (TYPE C) | Movement: '..verticalMovement..' | Distance: '..distance..' | Time: ' .. timeOnAir)
 								end
 							end
 						end
@@ -199,40 +216,152 @@ playerService.PlayerAdded:Connect(function(plr)
 						lastPosition = root.Position
 						lastTick = tick()
 					end
-					
-					task.wait(0.0193726385)
+
+					if currentAirTime == 0 then
+						timeOnAir = 0
+					end
 				end
 			end
 		end)
 		
-		--// Fly Check D
+		--// Fly D
 		task.spawn(function()
-			if configuration.flyD then
-				local timeSinceAir = 0
+			if configuration.flyC then
+				local timeOnAir = 0
 				local antiInfFlag = 0
 				while plr do
-					local timeSinceFloor = onAir(root)
-					timeSinceAir = timeSinceAir + timeSinceFloor
+					task.wait(0.0174291482)
+
+					local currentAirTime = onAir(root)
+					timeOnAir = timeOnAir + currentAirTime
 					local verticalMovement = root.Velocity.Y
 					local distance = math.sqrt((root.Position.X - lastPosition.X) ^ 2 + (root.Position.Z - lastPosition.Z) ^ 2)
 
-					if timeSinceFloor >= configuration.flyDMax then
-							if verticalMovement >= 0 then
-								if verticalMovement <= 145 and verticalMovement >= 1 then
-									if configuration.anticheatSetBack then
-										setBack(antiInfFlag, 0.55)
-									end
-									if configuration.anticheatDebug then
-										warn('[LINT] '..plr.Name..' has failed Flight (TYPE D) | Movement: '..verticalMovement..' | Distance: '..distance..' | Time: ' .. timeSinceFloor)
-									end
+					if timeOnAir >= configuration.flyCMax then
+						if verticalMovement >= 0 then
+							if verticalMovement >= 0.1 and verticalMovement <= 150 then
+								if configuration.anticheatSetBack then
+									setBack(antiInfFlag, 0.55)
 								end
+								if configuration.anticheatDebug then
+									warn('[LINT] '..plr.Name..' has failed Flight (TYPE D) | Movement: '..verticalMovement..' | Distance: '..distance..' | Time: ' .. timeOnAir)
+								end
+							end
 						end
 					else
 						lastPosition = root.Position
 						lastTick = tick()
 					end
 
-					task.wait(0.01937263813)
+					if currentAirTime == 0 then
+						timeOnAir = 0
+					end
+				end
+			end
+		end)
+		
+		--// Fly E
+		task.spawn(function()
+			if configuration.flyE then
+				local timeOnAir = 0
+				local antiInfFlag = 0
+				while plr do
+					task.wait(0.0174291482)
+
+					
+					local localTick = tick() - lastTick
+					local distance = math.sqrt((root.Position.X - lastPosition.X) ^ 2 + (root.Position.Z - lastPosition.Z) ^ 2)
+					local velocity = distance / localTick
+					local currentAirTime = onAir(root)
+					timeOnAir = timeOnAir + currentAirTime
+
+					if timeOnAir >= configuration.flyEMaxAir then
+						if velocity >= configuration.flyEMaxVelocity then
+							if configuration.anticheatSetBack then
+								setBack(antiInfFlag, 0.55)
+							end
+							if configuration.anticheatDebug then
+								warn('[LINT] '..plr.Name..' has failed Flight (TYPE E) | On Ground: '..tostring(onGround)..' | Velocity: '..velocity..' | Distance: '..distance..' | Time: ' .. timeOnAir)
+							end
+						end
+					else
+						lastPosition = root.Position
+						lastTick = tick()
+					end
+
+					if currentAirTime == 0 then
+						timeOnAir = 0
+					end
+				end
+			end
+		end)
+		
+		--// Glide A
+		task.spawn(function()
+			if configuration.glideA then
+				local timeOnAir = 0
+				local antiInfFlag = 0
+				while plr do
+					task.wait(0.0174291482)
+
+
+					local verticalMovement = root.Velocity.Y
+					local distance = math.sqrt((root.Position.X - lastPosition.X) ^ 2 + (root.Position.Z - lastPosition.Z) ^ 2)
+					local currentAirTime = onAir(root)
+					timeOnAir = timeOnAir + currentAirTime
+
+					if timeOnAir >= configuration.glideAMax then
+						if verticalMovement <= 0 and verticalMovement >= 55 then
+							if configuration.anticheatSetBack then
+								setBack(antiInfFlag, 0.55)
+							end
+							if configuration.anticheatDebug then
+								warn('[LINT] '..plr.Name..' has failed Glide (TYPE A) | On Ground: '..tostring(onGround)..' | Movement: '..verticalMovement..' | Distance: '..distance..' | Time: ' .. timeOnAir)
+							end
+						end
+					else
+						lastPosition = root.Position
+						lastTick = tick()
+					end
+
+					if currentAirTime == 0 then
+						timeOnAir = 0
+					end
+				end
+			end
+		end)
+		
+		--// Glide B
+		task.spawn(function()
+			if configuration.glideB then
+				local timeOnAir = 0
+				local antiInfFlag = 0
+				while plr do
+					task.wait(0.0174291482)
+
+
+					local verticalMovement = root.Velocity.Y
+					local distance = math.sqrt((root.Position.X - lastPosition.X) ^ 2 + (root.Position.Z - lastPosition.Z) ^ 2)
+					local currentAirTime = onAir(root)
+					timeOnAir = timeOnAir + currentAirTime
+
+					if timeOnAir >= configuration.glideBMax then
+						if verticalMovement >= 0 and verticalMovement <= 145 then
+							if configuration.anticheatSetBack then
+								setBack(antiInfFlag, 0.55)
+							end
+							if configuration.anticheatDebug then
+								warn('[LINT] '..plr.Name..' has failed Glide (TYPE B) | On Ground: '..tostring(onGround)..' | Movement: '..verticalMovement..' | Distance: '..distance..' | Time: ' .. timeOnAir)
+							end
+						end
+					else
+						lastPosition = root.Position
+						lastTick = tick()
+					end
+
+					if currentAirTime == 0 then
+						timeOnAir = 0
+					end
 				end
 			end
 		end)
