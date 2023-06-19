@@ -1,32 +1,15 @@
-[![](https://cdn.discordapp.com/attachments/1114213473426088059/1114949929761255484/lint1.png)]()
+[![](https://cdn.discordapp.com/attachments/1045747155463327804/1120144874931486791/lintnew1.png)]()
 
-### Lint is a free anticheat that provides advanced and premium anticheat levels for your game, at any time.
-### Lint runs on **1** Server-Sided Script and **1** Module Script inside the Server-Sided Script. It is almost fully server-sided meaning cheaters cannot disable or try to disable the anticheat, protecting your game from full disablers and bypasses.
-### By using Lint you comply to our **Terms of Service**.
+### Lint.ac is a custom and fully open-sourced anticheat for you to use.
+### Lint is advanced, powerful and hard to bypass.
 [![](https://cdn.discordapp.com/attachments/1114213473426088059/1114959925014175754/split.png)]()
 
-[![](https://cdn.discordapp.com/attachments/1114213473426088059/1114951655465693194/lint2.png)]()
-
-
-## Customization
-### **You are able to customize any aspect of Lint**, from disabling over 8+ checks to customizing their values to make sure no bypasses and false flags occur for your game.
-### No need to also take hours trying to customize Lint, its super **simple**.
-[![](https://cdn.discordapp.com/attachments/1114213473426088059/1114959925014175754/split.png)]()
-
-## False Flags
-### **The default config of Lint rarely false flags**, and if it does you can customize the values and stop it from false flagging.
-[![](https://cdn.discordapp.com/attachments/1114213473426088059/1114959925014175754/split.png)]()
-
-## Bypasses
-### **Lint has almost to no bypasses currently**, and there wont be aslong as we are alive.
-[![](https://cdn.discordapp.com/attachments/1114213473426088059/1114959925014175754/split.png)]()
-
-[![](https://cdn.discordapp.com/attachments/1114213473426088059/1114954518606643271/lint3.png)]()
+[![](https://cdn.discordapp.com/attachments/1045747155463327804/1120145778481041458/lintnew2.png)]()
 
 ## Detections
-### **We provide up to ~15 difference in speed, allowing you to catch and stop hackers at record time.**
-### We also provide you Jumping Related Checks, God Mode Checks, Simulation, Flight Checks and we are soon going to have Glide and Teleport Checks!
-### It is also impossible to fly for more than 2 seconds while using Lint! ;)
+### We provide up to ~20% difference in speed, as-well as ~15% difference in jumping height allowing you to catch hackers in record time.
+### We also have many checks such as fly, invalid, teleport, etc!
+### It is also almost impossible to fly for more than 2 seconds while using Lint! ;)
 [![](https://cdn.discordapp.com/attachments/1114213473426088059/1114959925014175754/split.png)]()
 
 ## Setbacks
@@ -43,38 +26,33 @@
 ### **Keep in mind, this does not mean Lint is LAG-PROOF.** Lint still may lag your in-game scripts unless configured correctly.
 [![](https://cdn.discordapp.com/attachments/1114213473426088059/1114959925014175754/split.png)]()
 
-[![](https://cdn.discordapp.com/attachments/1114213473426088059/1114961442614030406/lint4.png)]()
+[![](https://cdn.discordapp.com/attachments/1045747155463327804/1120145794239049798/lintnew3.png)]()
 
-### As with every single other anticheat that exists in this world, there will always be possibilites for false flags and bypasses and **Lint** is like no other. 
-### Please remember Lint's purpose. **It is designed to detect blatant cheaters that like to fly and more.**. 
-### If you are looking for an anticheat that can detect 1% increase on anything, instantly detects all fly hacks then you are not in the right place. Lint is not the right anticeat for you, 
-### and there wont be an anticheat for you.
-[![](https://cdn.discordapp.com/attachments/1114213473426088059/1114959925014175754/split.png)]()
-
-[![](https://cdn.discordapp.com/attachments/1114213473426088059/1114963409688084500/lint5.png)]()
+### Here is our checks!
 
 ### Movement  :
-- **Flight**: A, B, C, D
-- **Speed**: A, B, C, D
-- **Motion**: A, B
+- **Flight**: A, B, C, D, E
+- **Speed**: A, B, C, D, E, F
+- **Motion**: A, B, C
 - **Jump**: A
+- **Teleport**: A, B
 
-### Other   :
-- **Health**: A, B, C
+### Other  :
+- **Invalid**: A
 [![](https://cdn.discordapp.com/attachments/1114213473426088059/1114959925014175754/split.png)]()
 
-[![](https://cdn.discordapp.com/attachments/1114213473426088059/1114964252848050196/lint6.png)]()
+[![](https://cdn.discordapp.com/attachments/1045747155463327804/1120145815990698045/lintnew4.png)]()
 
 ### Here are the steps to install lint on your game.
 
 ### Step 1:
-  - Go to the main page and copy everything in "**anticheat.lua**"
+  - Go to the main page and copy the link inside "**installation.lua**"
 ### Step 2:
-  - Go to your game, create a new **Script** (server-sided one) inside **ServerScriptService**, in the script paste the stuff you have copied, name the script "**Lint**"
+  - Go to your browser (which you are using right now) and paste in the link inside. It will send you to a roblox page.
 ### Step 3:
-  - Go back to the main page and copy everything in "**config.lua**"
+  - Click on "**Get Item**" and confirm you have it.
 ### Step 4:
-  - Go to your game again, create a new **ModuleScript** in the **Server-Sided** script named "**Lint**", after than paste the stuff you have copied AND name the script "**config**" (**MUST BE ALL LOWERCASED**)
+  - Go to your game and go to marketplace (your items) and put Lint inside your game.
 
 [![](https://cdn.discordapp.com/attachments/1114213473426088059/1114959925014175754/split.png)]()
 [![](https://cdn.discordapp.com/attachments/1114213473426088059/1114959925014175754/split.png)]()
