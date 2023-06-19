@@ -24,7 +24,7 @@
 	 
 	 Configure the Anti-Cheat below this script
 	 We have recently moved from 1 script to different scripts for each module.
-	 If you are installing Lint.AC from GitHub please use the link inside "download.txt".
+	 If you are installing Lint.AC from GitHub please use the link inside "installation.lua".
 	 This update shall make it easier to update our Anti-Cheat, aswell as making it perform better.
 	 Thank you!
 	 - Lint Development Team
