@@ -20,7 +20,7 @@
 	 Want to send hackers to the shadow realm for free? Use lint today!
 	 RBLX: @HiRobloxDown | DISCORD: Moonzy#0001
 	 
-	 1.0.2
+	 1.0.3f
 	 
 	 Configure the Anti-Cheat below this script
 	 We have recently moved from 1 script to different scripts for each module.
@@ -29,6 +29,6 @@
 	 Thank you!
 	 - Lint Development Team
    
-   Install from this model: https://www.roblox.com/library/13794619164/Lint-AntiCheat-v1-0-2
+   Install from this model: https://create.roblox.com/marketplace/asset/14034478694/Advanced-AntiCheat-LintAC-v103
 
 ]]
