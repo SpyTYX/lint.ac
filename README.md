@@ -53,6 +53,7 @@
   - Click on "**Get Item**" and confirm you have it.
 ### Step 4:
   - Go to your game and go to marketplace (your items) and put Lint inside your game.
+  - (LINT MUST BE PUT INSIDE "SERVER SCRIPT SERVICE" AND MUST BE IN A FOLDER)
 
 [![](https://cdn.discordapp.com/attachments/1114213473426088059/1114959925014175754/split.png)]()
 [![](https://cdn.discordapp.com/attachments/1114213473426088059/1114959925014175754/split.png)]()
