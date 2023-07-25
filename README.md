@@ -1,3 +1,5 @@
+# LINT.AC HAS BEEN DISCONTINUED AS OF 25/07/2023. DONT WORRY BECAUSE I AM WORKING ON A NEW ANTICHEAT.
+
 [![](https://cdn.discordapp.com/attachments/1045747155463327804/1120144874931486791/lintnew1.png)]()
 
 ### Lint.ac is a custom and fully open-sourced anticheat for you to use.
@@ -44,6 +46,7 @@
 [![](https://cdn.discordapp.com/attachments/1045747155463327804/1120145815990698045/lintnew4.png)]()
 
 ### Here are the steps to install lint on your game.
+### [DISCONTINUED] This anticheat is discontinued and the default config false-flags very much, we do not recommend to use this anticheat anymore.
 
 ### Step 1:
   - Go to the main page and copy the link inside "**installation.lua**"
